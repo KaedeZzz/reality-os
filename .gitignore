@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+test-results/
+.npm-cache/
+out/
+desktop-build/
+release/
+desktop-startup*.log
+*.lnk
+*.log
+backups/
+reality-os-backup-*.json
+reality-os-????-??-??.json
+.publish/

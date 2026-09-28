@@ -1,0 +1,44 @@
+.home { max-width: 1120px; margin: 0 auto; padding: 14px 0 48px; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+.heading h1 { font-size: 36px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -.04em; }
+.heading p { margin: 0; color: var(--muted); font-size: 14px; }
+.focus { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 30px 34px; background: #c7b8ef; color: #292137; border-radius: 30px 30px 64px 30px; }
+.focus h2 { font-size: 24px; font-weight: 700; margin: 0 0 12px; letter-spacing: -.03em; }
+.focus p { font-size: 14px; margin: 0; color: #56476e; }
+.focus :global(.btn) { background: #292137; color: #fff; box-shadow: none; border: 0; flex-shrink: 0; min-height: 48px; padding: 0 24px; }
+.tasks { margin-top: 42px; }
+.sectionHeading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.sectionHeading h2 { font-size: 21px; margin: 0; }
+.sectionHeading h2 span { margin-left: 12px; font-size: 14px; font-weight: 400; color: var(--muted); }
+.sectionHeading button, .actions button { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+.sectionHeading button:hover, .actions button:hover { color: var(--text); }
+.home .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.home .cards :global(.quest-card) { min-height: 220px; padding: 26px; box-shadow: none; }
+.home .cards :global(.quest-card)::before, .home .cards :global(.quest-card)::after { display: none; }
+.home .cards :global(.quest-card h3) { font-size: 20px; line-height: 1.5; }
+.home .cards :global(.difficulty-easy), .home .cards :global(.difficulty-normal), .home .cards :global(.difficulty-hard) { display: none; }
+.home .cards :global(.xp-reward) { font-size: 19px; }
+.bottom { display: flex; align-items: start; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); margin-top: 32px; padding-top: 24px; }
+.checkin { flex: 1; max-width: 450px; color: var(--muted); font-size: 14px; }
+.checkin summary { cursor: pointer; width: fit-content; }
+.sliders { display: flex; gap: 24px; margin-top: 24px; }
+.sliders label { flex: 1; min-width: 0; }
+.sliders label span { display: flex; justify-content: space-between; margin-bottom: 12px; }
+.sliders input { width: 100%; accent-color: #c7b8ef; }
+.actions { display: flex; gap: 24px; }
+@media(max-width: 900px) { .home .cards { grid-template-columns: 1fr; } .home .cards :global(.quest-card) { min-height: 170px; } }
+@media(max-width: 600px) {
+  .home { padding-top: 4px; }
+  .heading { margin-bottom: 24px; gap: 12px; }
+  .heading h1 { font-size: 30px; }
+  .heading p { font-size: 12px; }
+  .heading :global(.btn) { padding: 10px 14px; font-size: 12px; }
+  .focus { align-items: start; flex-direction: column; padding: 26px; gap: 22px; border-radius: 26px 26px 50px 26px; }
+  .focus h2 { font-size: 21px; }
+  .tasks { margin-top: 30px; }
+  .home .cards { gap: 16px; }
+  .bottom { flex-direction: column; }
+  .checkin { width: 100%; }
+  .actions { width: 100%; justify-content: flex-end; }
+}
+

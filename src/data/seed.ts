@@ -14,12 +14,7 @@ export function createSeed(): GameState {
   const definitions = [
     ["engineering", "工程开发", "code", null, 3800, "#8da7fa", 1],
     ["research", "学术研究", "flask", null, 7200, "#b1a0ef", 1],
-    ["image", "图像分析", "scan", "research", 1500, "#b1a0ef", 3],
-    ["python", "Python", "code", "engineering", 1300, "#8da7fa", 2],
-    ["ml", "机器学习", "brain", "engineering", 0, "#8da7fa", 8],
     ["chess", "国际象棋", "chess", null, 2200, "#e9b976", 1],
-    ["tactics", "战术训练", "target", "chess", 600, "#e9b976", 2],
-    ["openings", "开局理论", "chess", "chess", 0, "#e9b976", 6],
     ["fitness", "体能健康", "heart", null, 2800, "#88cfa4", 1],
     ["social", "社交连接", "users", null, 1400, "#ed9bac", 1],
     ["admin", "生活管理", "coffee", null, 1020, "#85cbd6", 1],

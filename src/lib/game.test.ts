@@ -115,10 +115,10 @@ describe("任务链与技能成长", () => {
     const s = createSeed();
     s.skills.find((a) => a.id === "engineering")!.xp = 0;
     s.skills.find((a) => a.id === "engineering")!.level = 1;
-    s.skills.find((a) => a.id === "python")!.unlocked = false;
+    s.skills.find((a) => a.id === "chess")!.unlocked = false;
     s.quests[0] = { ...s.quests[0], skillId: "engineering", xpReward: 100 };
     const result = completeQuest(s, "q1");
-    expect(result.state.skills.find((a) => a.id === "python")!.unlocked).toBe(
+    expect(result.state.skills.find((a) => a.id === "chess")!.unlocked).toBe(
       true,
     );
   });

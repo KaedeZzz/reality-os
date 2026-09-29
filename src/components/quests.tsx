@@ -111,6 +111,14 @@ export function QuestCard({
             </span>
           )}
         </div>
+        {!compact && quest.description && (
+          <details className="tiny muted" style={{ marginTop: 10 }}>
+            <summary style={{ cursor: "pointer" }}>任务说明与完成标准</summary>
+            <p style={{ whiteSpace: "pre-line", lineHeight: 1.7, marginTop: 8 }}>
+              {quest.description}
+            </p>
+          </details>
+        )}
         {!compact && quest.actualMinutes > 0 && (
           <p className="tiny muted">
             已投入 {quest.actualMinutes.toFixed(1)} 分钟

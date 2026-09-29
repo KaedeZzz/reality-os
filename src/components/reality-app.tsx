@@ -5,18 +5,16 @@ import {
   Swords,
   GitBranch,
   ChartNoAxesCombined,
-  Flag,
   Settings2,
   ChevronDown,
   ArrowUpRight,
   Command,
   Menu,
-  X,
   CircleHelp,
   Sparkles,
 } from "lucide-react";
 import { useGame } from "../hooks/use-game";
-import { dateKey, levelProgress } from "../lib/game";
+import { dateKey } from "../lib/game";
 import { WORKDAY_RULE } from "../lib/economy";
 import { supabase } from "../lib/storage";
 import type { Quest } from "../types/game";
@@ -25,12 +23,10 @@ import { Dashboard } from "./dashboard";
 import { Quests, QuestEditor } from "./quests";
 import { Skills } from "./skills";
 import { Stats } from "./stats";
-import { SeasonPage } from "./season";
 import { Settings, AuthForm } from "./settings";
 import { FocusModal } from "./focus";
 import { Modal } from "./ui/modal";
 import { Button } from "./ui/button";
-import { Progress } from "./shared";
 
 const navigation = [
   {
@@ -48,7 +44,6 @@ const navigation = [
     english: "Stats",
     icon: ChartNoAxesCombined,
   },
-  { id: "season", title: "赛季旅程", english: "Season", icon: Flag },
   { id: "settings", title: "系统设置", english: "Settings", icon: Settings2 },
 ];
 export function RealityApp() {
@@ -78,7 +73,8 @@ export function RealityApp() {
   useEffect(() => {
     const sync = () => {
       const rawHash = window.location.hash.slice(1);
-      const hash = rawHash === "collection" ? "rewards" : rawHash;
+      const hash = rawHash === "collection" ? "rewards" : rawHash === "season" ? "dashboard" : rawHash;
+      if (rawHash === "season") window.history.replaceState(null, "", "#dashboard");
       if ([...navigation.map((n) => n.id), "settings"].includes(hash))
         setPage(hash);
     };
@@ -202,17 +198,6 @@ export function RealityApp() {
             </button>
           ))}
         </nav>
-        <div className="sidebar-season">
-          <div className="eyebrow">
-            <Flag size={12} /> {state.season.name}
-          </div>
-          <h3>{state.season.subtitle}</h3>
-          
-          <button onClick={() => navigate("season")}>
-            继续你的旅程
-            <ArrowUpRight size={13} />
-          </button>
-        </div>
         <div className="sidebar-bottom">
           <button
             className={page === "settings" ? "selected" : ""}
@@ -324,7 +309,6 @@ export function RealityApp() {
           {page === "rewards" && <RewardsPage />}
           {page === "skills" && <Skills initialSkillId={selectedSkill} />}
           {page === "stats" && <Stats />}
-          {page === "season" && <SeasonPage />}
           {page === "settings" && <Settings />}
         </main>
       </div>

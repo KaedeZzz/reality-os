@@ -37,7 +37,7 @@ export function GrowthHero({
         </div>
         <div className="growth-hero-copy">
           <div className="growth-kicker">
-            <span className="live-dot" /> {state.season.name} <span>/</span>{" "}
+            <span className="live-dot" /> REALITY OS <span>/</span>{" "}
             GROW AT YOUR OWN PACE
           </div>
           <h2>

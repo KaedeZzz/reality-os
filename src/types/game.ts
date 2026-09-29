@@ -143,6 +143,7 @@ export interface GameState {
   quests: Quest[];
   chains: QuestChain[];
   runs: DailyRun[];
+  /** Archived for compatibility with v1 saves; no active season feature. */
   season: Season;
   rewards: Reward[];
   achievements: Achievement[];

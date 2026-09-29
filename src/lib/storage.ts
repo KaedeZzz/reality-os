@@ -4,6 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { GameState } from "../types/game";
 import { createSeed } from "../data/seed";
+import { collapseDirections } from "./directions";
 import {
   calculateLevel,
   ensureDay,
@@ -242,7 +243,7 @@ export function parseState(value: unknown): GameState {
     const p = levelProgress(s.xp);
     return { ...s, level: p.level, xpToNextLevel: p.required - p.current };
   });
-  return ensureDay(refreshUnlocks(parsed));
+  return ensureDay(refreshUnlocks(collapseDirections(parsed)));
 }
 export interface GameRepository {
   load(): Promise<GameState>;

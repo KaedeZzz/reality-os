@@ -1,6 +1,6 @@
 # Reality OS
 
-**v0.1.0-alpha.1 · 开发中 Alpha**
+**v0.1.0-alpha.2 · 开发中 Alpha**
 
 把真实行动变成值得期待的个人奖励。中文界面，Windows 本地 App，无需端口即可打开，断网可用。当前功能和数值仍在迭代，真实任务内容将通过对话确定后配置。
 
@@ -19,6 +19,10 @@
 消费类按 1 币对应 1 元个人预算定价，休闲类单独定价。游戏不执行支付或预订。商品图片随 App 打包；图片来源、参考型号与生成说明见 [资源说明](docs/reward-media.md)。
 
 ## Windows 桌面版
+
+在 [v0.1.0-alpha.2 发布页](https://github.com/KaedeZzz/reality-os/releases/tag/v0.1.0-alpha.2) 下载 `Reality-OS-v0.1.0-alpha.2-windows-x64.zip`，完整解压后双击文件夹中的 `Reality OS.exe`。无需安装 Node.js，也不需要启动服务器。升级前关闭旧版，再解压新版；原有本地存档会继续保留。
+
+### 从源码构建
 
 开发环境需要 Node.js 20.9 或以上版本。
 
@@ -68,4 +72,4 @@ npm run build     # Web 生产构建
 - 实际任务内容尚未最终配置，默认任务及部分统计为演示内容。
 - 磁轴键盘与 ROG 的具体型号、Knoops 可可浓度待确认；产品参考图已明确标注。
 - 时间记录属于个人自律工具，没有外部行为验证。
-- 当前预发布提供源码；尚无自动更新和 Windows 安装器。
+- 当前预发布提供源码及 Windows x64 免安装压缩包；尚无自动更新和 Windows 安装器。
